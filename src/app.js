@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const routes = require('./routes/main');
 const baseModule = require("hbs");
 const Details = require("./models/Details")
+const Slider = require("./models/Slider")
 
 
 //Template engine config
@@ -25,6 +26,25 @@ mongoose.connect("mongodb://127.0.0.1:27017/web_one",{
 .then(()=>{console.log("db connected...")})
 
 .catch((err)=> { console.log(err); })
+//Slider Creation
+
+// Slider.create([
+//     {
+//         title: 'The cup of Coffee',
+//         subTitle: 'May your coffee be strong and your Monday be short.',
+//         imageUrl: "/static/images/s1.jpg"
+//     },    
+//     {
+//         title: 'Birthday Cakes',
+//         subTitle: 'The cheapest and safest way to be happy is to eat a piece of cake after a long fast.',
+//         imageUrl: "/static/images/s2.jpg"
+//     },    
+//     {
+//         title: 'Soft Drinks',
+//         subTitle: '“If someone asks for a soft drink at a party, we no longer think he is a wimp.',
+//         imageUrl: "/static/images/s3.jpg"
+//     } 
+// ])
 // data collection for navbar
 
 // Details.create({

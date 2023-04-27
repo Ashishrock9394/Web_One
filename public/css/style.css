@@ -1,3 +1,4 @@
-body{
-    background-color: orange;
+.slider-image{
+    height: 550px!important;
+    object-fit: cover;
 }
