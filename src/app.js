@@ -6,6 +6,8 @@ const routes = require('./routes/main');
 const baseModule = require("hbs");
 const Details = require("./models/Details")
 const Slider = require("./models/Slider")
+const Service = require("./models/Service")
+const bodyParser = require("body-parser")
 
 
 //Template engine config
@@ -13,6 +15,9 @@ app.set('view engine', 'hbs')
 app.set("views","views")
 hbs.registerPartials("views/partials")
 //Routes config
+app.use(bodyParser.urlencoded({
+    extended:true
+}))
 app.use('',routes)
 
 //static config
@@ -26,6 +31,39 @@ mongoose.connect("mongodb://127.0.0.1:27017/web_one",{
 .then(()=>{console.log("db connected...")})
 
 .catch((err)=> { console.log(err); })
+
+// Service creation
+// Service.create([
+//     {
+//         icon: 'fa-solid fa-champagne-glasses',
+//         title: 'Beverages',
+//         description: 'We provide all the Coke brands, Like: Thumps-Up, Coka-Cola, Limca, Charged etc.',
+//         textOne: 'Details',
+//         textTwo: 'Order',
+//         linkOne: '#details',
+//         linkTwo: '#order'
+//     },
+//     {
+//         icon: 'fa-solid fa-cake-candles',
+//         title: 'Cakes',
+//         description: 'We have a wide range of Birthday Cakes and Celebration Cakes with hundreds of brilliant designs',
+//         textOne: 'Details',
+//         textTwo: 'Order',
+//         linkOne: '#details',
+//         linkTwo: '#order'
+//     },
+//     {
+//         icon: 'fa-solid fa-burger-glass',
+//         title: 'Cakes',
+//         description: 'We have a wide range of Birthday Cakes and Celebration Cakes with hundreds of brilliant designs',
+//         textOne: 'Details',
+//         textTwo: 'Order',
+//         linkOne: '#details',
+//         linkTwo: '#order'
+//     }
+    
+// ])
+
 //Slider Creation
 
 // Slider.create([

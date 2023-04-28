@@ -8,14 +8,80 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/static/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Sparks Enterprises</title>
   </head>
   <body>
+    {{!-- navbar.... --}}
     {{>navbar data=details}}
+    {{!-- slider --}}
     {{>slider sliders=sliders}}
+
+    {{!-- Servises section --}}
+    <section id="service_section" class="py-3">
+      <div class="container">
+        <h3 class="text-center text-secondary">Our Services</h3>
+
+        <div class="row mt-5">
+          {{!-- first Services --}}
+          {{#each services}}
+          <div class="col-md-4 pb-2">
+            <div class="card">
+              <div class="card-body">
+                <div class="container text-center py-1">
+                  <i class="{{this.icon}} service_icon text-secondary"></i>
+                </div>
+                <h3 class="card-title text-center">{{this.title}}</h3>
+                <p>{{this.description}}</p>
+                <a href="{{this.linkOne}}">{{this.textOne}}</a>
+                <a href="{{this.linkTwo}}" class="ml-3">{{this.textTwo}}</a>
+              </div>
+            </div>
+          </div>
+          {{/each}}
+          
+        </div>
+      </div>
+    </section>
+
+    {{!-- Contact Us Section --}}
+
+    <section id="contact_us_section" class="py-5 backgrount1">
+      <div class="container">
+        <h3 class="text-center text-secondary">Contact Us</h3>
+        <dive class="row">
+          <div class="col-md-12">
+{{!-- contact form --}}
+            <form action="/process-contact-form" method="post">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Your Email address</label>
+                <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+              </div>
+              <div class="mb-3">
+                <label for="contactNumber" class="form-label">Your Contact Number</label>
+                <input name="contact" type="number" class="form-control" id="contactNumber">
+              </div>
+              <div class="form-floating mt-2">
+                <textarea name="query" style="height:150px;" class="form-control" placeholder="Enter your query here" id="queryField"></textarea>
+                <label for="queryField">Your Query</label>
+              </div>
+              <div class="container text-center">
+                <button type="submit" class="btn btn-dark">Submit</button>
+              </div>
+            </form>
+
+          </div>
+        </dive>
+      </div>
+
+    </section>
+
+
     <h1>Hello, Welcome Home</h1>
-    
+  <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+    Deleniti a nemo cupiditate est ut consequuntur doloribus, 
+    quaerat quisquam totam sequi tenetur velit! Corporis nulla, voluptatum vel ipsam optio obcaecati iusto?</P>
     
     <!-- Optional JavaScript; choose one of the two! -->
 
