@@ -95,7 +95,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/web_one",{
 //         },
 //         {
 //             lable: "Services",
-//             url: "/services"
+//             url: "/#service_section"
 //         },
 //         {
 //             lable: "Gallary",
@@ -103,11 +103,11 @@ mongoose.connect("mongodb://127.0.0.1:27017/web_one",{
 //         },
 //         {
 //             lable: "About",
-//             url: "/about"
+//             url: "/#about_section"
 //         },
 //         {
 //             lable: "Contact Us",
-//             url: "/contact_us"
+//             url: "/#contact_us_section"
 //         }
 //     ]
 // })

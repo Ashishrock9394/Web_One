@@ -10,7 +10,7 @@ const Contact = require("../models/Contact")
 const routes = express.Router()
 
 routes.get("/", async (req,res) => {
-    const details = await Details.findOne({"_id":"644accf2882e1d1041cf745e"})
+    const details = await Details.findOne({"_id":"644cc14c56f91beb90f6df6a"})
     const sliders = await Slider.find()
     const services = await Service.find()
     // console.log(sliders)
